@@ -9,8 +9,7 @@
 #include <fstream>
 #include <stdexcept>
 
-#include <opencv2/highgui/highgui_c.h>
-#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 
 #include "OsiEye.h"
 #include "OsiProcessings.h"
@@ -52,8 +51,12 @@ void OsiEye::loadImage(const std::string &rFilename, IplImage **ppImage)
         {
             cvReleaseImage(ppImage);
         }
-        auto mImage = cv::imread(rFilename, 0);
-        *ppImage = reinterpret_cast<IplImage *>(&mImage);
+
+        auto m = cv::imread(rFilename, 0);
+        auto image = cvIplImage(m);
+
+        *ppImage = cvCloneImage(&image);
+
         if (!*ppImage)
         {
             std::cout << "Cannot load image : " << rFilename << std::endl;

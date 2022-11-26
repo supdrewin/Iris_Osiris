@@ -6,8 +6,6 @@
  * License : BSD
  ********************************************************/
 
-#include <opencv2/core/core_c.h>
-
 #include "OsiProcessings.h"
 #include "OsiStringUtils.h"
 

@@ -470,7 +470,7 @@ void OsiManager::loadListOfImages()
 // Load, segment, normalize, encode, and save according to user configuration
 void OsiManager::processOneEye(const std::string &rFileName, OsiEye &rEye)
 {
-    // cout << "Process " << rFileName << endl ;
+    std::cout << "Process " << rFileName << std::endl;
 
     // Strings handle
     OsiStringUtils osu;
@@ -698,7 +698,6 @@ void OsiManager::run()
                 }
             }
         }
-
         catch (std::exception &e)
         {
             std::cout << e.what() << std::endl;

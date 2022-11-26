@@ -109,7 +109,14 @@ void OsiCircle::computeCircleFitting(const std::vector<CvPoint> &rPoints)
     float uc = 0.5 * (suv * (svvv + suuv) - svv * (suuu + suvv)) / (suv * suv - suu * svv);
     float vc = 0.5 * (suv * (suuu + suvv) - suu * (svvv + suuv)) / (suv * suv - suu * svv);
 
+    std::cout << "uc: " << uc << std::endl;
+    std::cout << "vc: " << vc << std::endl;
+
+    std::cout << "rPoints.size(): " << rPoints.size() << std::endl;
+    std::cout << "rPoints[0].x: " << rPoints[0].x << std::endl;
+    std::cout << "rPoints[0].y: " << rPoints[0].y << std::endl;
+
     // Circle parameters
     setCenter(cvPoint(uc + mx, vc + my));
-    setRadius((int)(std::sqrt(uc * uc + vc * vc + (suu + svv) / rPoints.size())));
+    setRadius(std::sqrt(uc * uc + vc * vc + (suu + svv) / rPoints.size()));
 }

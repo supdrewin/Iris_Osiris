@@ -12,8 +12,6 @@
 #include <map>
 #include <vector>
 
-#include <opencv2/highgui/highgui_c.h>
-
 #include "OsiEye.h"
 
 /** Overall manager.

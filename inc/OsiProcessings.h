@@ -17,8 +17,6 @@
 #define OSI_MAX_RATIO_PUPIL_IRIS 0.7f
 #define OSI_MIN_RATIO_PUPIL_IRIS 0.2f
 
-#include <opencv2/highgui/highgui_c.h>
-
 #include "OsiCircle.h"
 
 /** Image processing functions.

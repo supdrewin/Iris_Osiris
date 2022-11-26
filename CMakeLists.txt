@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.6)
 
 project (Osiris)
 
-set(srcs 
+set(srcs
     src/OsiCircle.cpp
 	src/OsiEye.cpp
 	src/OsiMain.cpp
@@ -10,12 +10,14 @@ set(srcs
 	src/OsiProcessings.cpp
 	)
 set(incs
-    src/OsiCircle.h
-	src/OsiEye.h
-	src/OsiManager.h
-	src/OsiProcessings.h
-	src/OsiStringUtils.h
+    inc/OsiCircle.h
+	inc/OsiEye.h
+	inc/OsiManager.h
+	inc/OsiProcessings.h
+	inc/OsiStringUtils.h
 	)
+
+include_directories(inc)
 
 find_package(OpenCV QUIET)
 if (OpenCV_FOUND)
